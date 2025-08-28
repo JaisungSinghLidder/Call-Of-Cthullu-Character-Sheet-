@@ -1,11 +1,19 @@
-// src/App.jsx
-import React from "react";
+import { useState } from "react";
+import CharacterSheet from "./components/CharacterSheet";
+import Notes from "./components/Notes";
 
 function App() {
+  const [activeTab, setActiveTab] = useState("sheet");
+
   return (
-    <div>
-      <h1>Call of Cthulhu Character Sheet</h1>
-      <p>Welcome, investigator. Build your character here.</p>
+    <div className="app">
+      <nav className="tabs">
+        <button onClick={() => setActiveTab("sheet")}>Character Sheet</button>
+        <button onClick={() => setActiveTab("notes")}>Notes</button>
+      </nav>
+
+      {activeTab === "sheet" && <CharacterSheet />}
+      {activeTab === "notes" && <Notes />}
     </div>
   );
 }
