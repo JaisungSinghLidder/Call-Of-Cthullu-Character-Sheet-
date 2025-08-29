@@ -1,22 +1,15 @@
 import { useState } from "react";
-import CharacterInfo from "./CharacterInfo"
-import Stats from "./Stats"
-import Skills from "./CharacterSkills"
-import Combat from "./Combat"
+import CharacterInfo from "./CharacterInfo";
+import React from "react";
 
 
 
-function CharacterSheet()
-{
-    return (
-        <div className = "character-sheet">
-            <CharacterInfo /> 
-            <Stats /> 
-            <Skills /> 
-            <Combat /> 
-        </div>
-    );
+function CharacterSheet() {
+  return (
+    <div className="character-sheet">
+      <CharacterInfo />
+    </div>
+  );
 }
 
-
-export default CharacterSheet; 
+export default CharacterSheet;
