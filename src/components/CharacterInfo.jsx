@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./CharacterInfo.css";
 
 function CharacterInfo() {
   const [name, setName] = useState("");
@@ -18,7 +19,7 @@ function CharacterInfo() {
     <div className="character-info">
       {/* Left side: form inputs */}
       <div className="character-details">
-        <label>
+        <label className="top-bar">
           Name:
           <input
             type="text"
@@ -27,7 +28,7 @@ function CharacterInfo() {
           />
         </label>
         <br />
-        <label>
+        <label className="top-bar">
           Age:
           <input
             type="number"
@@ -36,7 +37,7 @@ function CharacterInfo() {
           />
         </label>
         <br />
-        <label>
+        <label className="bottom-bar">
           Occupation:
           <input
             type="text"

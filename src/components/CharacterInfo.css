@@ -1,0 +1,47 @@
+.character-info {
+  display: flex;
+  gap: 2rem;
+  align-items: center; 
+  height:10rem;
+  justify-content: space-between;
+}
+
+.character-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+  height:100%;
+}
+
+.top-bar-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.top-bar, .bottom-bar {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 0.5rem;  
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;    
+  margin-right: 0;      
+}
+
+.character-photo {
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  
+}
+
+.character-photo img {
+    height:100%;
+}
+
+.photo-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
