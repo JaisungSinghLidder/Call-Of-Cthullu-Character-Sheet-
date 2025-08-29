@@ -1,0 +1,62 @@
+import { useState } from "react";
+
+function CharacterInfo() {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [profileImage, setProfileImage] = useState(null);
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setProfileImage(URL.createObjectURL(file));
+    }
+  };
+
+  return (
+    <div className="character-info">
+      {/* Left side: form inputs */}
+      <div className="character-details">
+        <label>
+          Name:
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Age:
+          <input
+            type="number"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Occupation:
+          <input
+            type="text"
+            value={occupation}
+            onChange={(e) => setOccupation(e.target.value)}
+          />
+        </label>
+      </div>
+
+      {/* Right side: profile picture */}
+      <div className="character-photo">
+        {profileImage ? (
+          <img src={profileImage} alt="Profile" />
+        ) : (
+          <div className="photo-placeholder">No Image</div>
+        )}
+        <br />
+        <input type="file" accept="image/*" onChange={handleImageUpload} />
+      </div>
+    </div>
+  );
+}
+
+export default CharacterInfo;
