@@ -10,7 +10,10 @@ function CharacterSheet()
 {
     return (
         <div className = "character-sheet">
-            
+            <CharacterInfo /> 
+            <Stats /> 
+            <Skills /> 
+            <Combat /> 
         </div>
     );
 }
