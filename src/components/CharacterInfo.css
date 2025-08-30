@@ -1,3 +1,16 @@
+p {
+  font-family: monospace;
+}
+
+label{
+  font-family: monospace;
+}
+
+input 
+{
+  font-family: monospace;
+}
+
 .character-info {
   display: flex;
   gap: 2rem;
@@ -13,27 +26,42 @@
   height:100%;
 }
 
-.top-bar-container {
-  display: flex;
+.top-section { 
+  display:flex;
   gap: 1rem;
 }
 
 .top-bar, .bottom-bar {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  margin-top: 0.5rem;  
-  margin-bottom: 0.5rem;
-  margin-left: 1rem;    
-  margin-right: 0;      
+  flex: 1;    
 }
 
 .character-photo {
   display: flex;
   flex-direction: column;
-  height:100%;
-  
+  justify-content: center; 
+  align-items: center;     
+  height: 100%;
+              
 }
+
+.upload-button {
+  background: #222;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: monospace; 
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.upload-button:hover {
+  background: #444;
+}
+
+
 
 .character-photo img {
     height:100%;

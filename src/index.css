@@ -1,0 +1,12 @@
+body {
+    font-family: monospace;
+    background-color: #f5e6c8; 
+    background: linear-gradient(
+        180deg,
+        #f5e6c8 0%,
+        #e8d6b1 50%,
+        #f5e6c8 100%
+    );
+
+}
+

@@ -19,6 +19,7 @@ function CharacterInfo() {
     <div className="character-info">
       {/* Left side: form inputs */}
       <div className="character-details">
+        <div className="top-section">
         <label className="top-bar">
           Name:
           <input
@@ -37,6 +38,7 @@ function CharacterInfo() {
           />
         </label>
         <br />
+        </div>
         <label className="bottom-bar">
           Occupation:
           <input
@@ -55,7 +57,17 @@ function CharacterInfo() {
           <div className="photo-placeholder">No Image</div>
         )}
         <br />
-        <input type="file" accept="image/*" onChange={handleImageUpload} />
+        <input
+          id="fileUpload"
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+          style={{ display: "none" }}   
+        />
+
+        <label htmlFor="fileUpload" className="upload-button">
+          Upload Photo
+        </label>
       </div>
     </div>
   );
