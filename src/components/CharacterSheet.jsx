@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import CharacterInfo from "./CharacterInfo";
-import CharacterSkills from "./CharacterSkills";
+import CharacterInfo from "./CharacterInfo.jsx";
+import CharacterSkills from "./CharacterSkills.jsx";
 
 
 
