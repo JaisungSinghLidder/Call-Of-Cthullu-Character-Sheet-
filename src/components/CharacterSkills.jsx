@@ -45,11 +45,17 @@ function CharacterSkills() {
     
     
     return (
+
+        <>
+
+        <div className = "roll-button-container">
+            <button onClick={rollAllStats}> Roll Stats</button>
+        </div>
+
+
+
         <div className = "character-skills">
 
-                <div className = "roll-button-container">
-                    <button onClick={rollAllStats}> Roll Stats</button>
-                </div>
 
             <div className="core-stats">
 
@@ -95,7 +101,21 @@ function CharacterSkills() {
                 
             </div>
 
+            <div className="derived-stats">
+                
+                <div className="hitPoints">
+                    hello world
+                </div>
+
+                <div className="sanityPoints">
+                    hello world 
+                </div>
+                
+            </div>
+
         </div>
+
+        </>
     );
 }
 
