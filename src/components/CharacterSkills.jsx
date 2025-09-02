@@ -12,6 +12,11 @@ function CharacterSkills() {
     const [size, setSize] = useState("");
     const [education, setEducation] = useState("");
 
+
+    const [currentHP, setCurrentHP] = useState(null);
+    const [changeAmount, setChangeAmount] = useState("");
+
+
     //using these to generate the stats 
     const rollStat = () => Math.floor((Math.random() * 18 + 3) *5);
     const rollEDU = () => Math.floor((Math.random() * 12 + 2) * 5);
@@ -36,7 +41,25 @@ function CharacterSkills() {
     const sanity = power || "";
     const halfSan = sanity ? Math.floor(sanity / 2) : "";
 
+     React.useEffect(() => {
+        if (hitPoints) setCurrentHP(hitPoints);
+    }, [hitPoints]);
 
+    const handleHeal = () => {
+        if (changeAmount)
+        {
+            setCurrentHP(prev => Math.min(hitPoints, prev + Number(changeAmount)));
+            setChangeAmount("");
+        }
+    };
+
+    const handleDamage = () => {
+        if (changeAmount)
+        {
+            setCurrentHP(prev => Math.max(0, prev - Number(changeAmount)));
+            setChangeAmount("");
+        }
+    };
 
 
 
@@ -104,11 +127,25 @@ function CharacterSkills() {
             <div className="derived-stats">
                 
                 <div className="hitPoints">
-                    hello world
+                    Healthpoints
+                    <div className="healthBox">
+                         <p>
+                            Current HP: {currentHP}|{hitPoints}
+                        </p>
+                        <div className="heal">
+                        <button className="healButton" onClick={handleHeal}>Heal</button>
+                        <input 
+                        type="number"
+                        min="0"
+                        value={changeAmount}
+                        onChange={e => setChangeAmount(e.target.value)}/>
+                        <button className="damageButton" onClick={handleDamage}>Damage</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="sanityPoints">
-                    hello world 
+                    Sanity 
                 </div>
                 
             </div>
