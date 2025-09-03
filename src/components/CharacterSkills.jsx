@@ -19,6 +19,9 @@ function CharacterSkills() {
     const [currentSanity, setCurrentSanity] = useState(null);
     const [changeAmountSanity, setChangeAmountSanity] = useState("");
 
+    const [currentMagic, setCurrentMagic] = useState(null);
+    const [changeAmountMagic, setChangeAmountMagic] = useState("");
+
 
     //using these to generate the stats 
     const rollStat = () => Math.floor((Math.random() * 18 + 3) *5);
@@ -39,10 +42,9 @@ function CharacterSkills() {
     //here will set the stats if they exist
     //these stats are derived from these core stats
     const hitPoints = constitution && size ? Math.floor((constitution + size) / 10) : ""; 
-    const halfHP = hitPoints ? Math.floor(hitPoints / 2 ) : "";
-    const quarterHP = hitPoints ? Math.floor(hitPoints / 4) : "";
     const sanity = power || "";
-    const halfSan = sanity ? Math.floor(sanity / 2) : "";
+    const magicPoints = power || "";
+
 
     React.useEffect(() => {
         if (hitPoints) setCurrentHP(hitPoints);
@@ -51,6 +53,10 @@ function CharacterSkills() {
     React.useEffect(() => {
         if (sanity) setCurrentSanity(sanity)
     }, [sanity]);
+
+    React.useEffect(() => {
+        if (magicPoints) setCurrentMagic(magicPoints)
+    }, [magicPoints])
 
     const handleHeal = () => {
         if (changeAmountHealth)
@@ -83,6 +89,24 @@ function CharacterSkills() {
             setChangeAmountSanity("");
         }
     };
+
+    const handleRestore = () => {
+        if (changeAmountMagic)
+        {
+            setCurrentMagic(prev => Max.min(magicPoints, prev + Number(changeAmountMagic)));
+            setChangeAmountMagic("");
+        }
+    };
+
+    const handleBurn = () =>{
+        if (changeAmountMagic)
+        {
+            setCurrentMagic(prev => Math.max(0, prev - Number(changeAmountMagic)));
+            setChangeAmountMagic("");
+        }
+    };
+
+
 
 
 
@@ -145,6 +169,34 @@ function CharacterSkills() {
                 <p>½: {education ? Math.floor(education / 2) : ""}, ¼: {education ? Math.floor(education / 4) : ""}</p>
                 </div>
                 
+            </div>
+
+
+
+            <div className="misc-stats">
+                <div className="magicPoints">
+                    <div className="hitPoints">
+                        <div className="healthBox">
+                            <p className = "hpDisplay">
+                                Current MP: {currentMagic}|{magicPoints}
+                            </p>
+                            <div className="heal">
+                            <button className="healButton" onClick={handleRestore}>Restore</button>
+                            <input
+                            className="healthInput" 
+                            type="number"
+                            min="0"
+                            value={changeAmountMagic}
+                            onChange={e => setChangeAmountMagic(e.target.value)}/>
+                            <button className="damageButton" onClick={handleBurn}>Burn</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    World
+                </div>
             </div>
 
             <div className="derived-stats">

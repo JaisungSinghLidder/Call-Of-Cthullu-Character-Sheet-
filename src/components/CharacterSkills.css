@@ -1,13 +1,12 @@
 .character-skills {
     display: grid;
-    grid-template-columns: 2fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; 
     gap: 2rem;
 }
 
 .core-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; 
+    display: grid;
+    grid-template-columns: 2fr; 
 }
 
 .hpDisplay
@@ -24,6 +23,13 @@
 
 .derived-stats {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.misc-stats
+{
+    display:flex;
     flex-direction: column;
     gap: 1rem;
 }
