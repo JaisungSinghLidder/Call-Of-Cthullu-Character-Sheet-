@@ -16,6 +16,12 @@
     font-weight: bold;
 }
 
+.sanityDisplay
+{
+    text-align: center;
+    font-weight: bold;
+}
+
 .derived-stats {
     display: flex;
     flex-direction: column;
@@ -56,6 +62,17 @@ button:hover {
     flex-direction: column;
 }
 
+.sanityPoints
+{
+    background-color: white;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border:2px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 .healthInput
 {
     height: auto; 
@@ -72,8 +89,26 @@ button:hover {
     font-family: monospace;
 }
 
+.recoverButton
+{
+    color: lightgreen;
+    border: 2px solid lightgreen;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem; 
+    background-color: transparent; 
+    font-family: monospace;
+}
+
 
 .damageButton
+{
+    color: red;
+    border: 2px solid red; 
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem; 
+    background-color: transparent; 
+    font-family: monospace;
+}
+
+.stressButton
 {
     color: red;
     border: 2px solid red; 

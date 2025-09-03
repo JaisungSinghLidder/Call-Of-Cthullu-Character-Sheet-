@@ -14,7 +14,10 @@ function CharacterSkills() {
 
 
     const [currentHP, setCurrentHP] = useState(null);
-    const [changeAmount, setChangeAmount] = useState("");
+    const [changeAmountHealth, setChangeAmountHealth] = useState("");
+
+    const [currentSanity, setCurrentSanity] = useState(null);
+    const [changeAmountSanity, setChangeAmountSanity] = useState("");
 
 
     //using these to generate the stats 
@@ -41,23 +44,43 @@ function CharacterSkills() {
     const sanity = power || "";
     const halfSan = sanity ? Math.floor(sanity / 2) : "";
 
-     React.useEffect(() => {
+    React.useEffect(() => {
         if (hitPoints) setCurrentHP(hitPoints);
     }, [hitPoints]);
 
+    React.useEffect(() => {
+        if (sanity) setCurrentSanity(sanity)
+    }, [sanity]);
+
     const handleHeal = () => {
-        if (changeAmount)
+        if (changeAmountHealth)
         {
-            setCurrentHP(prev => Math.min(hitPoints, prev + Number(changeAmount)));
-            setChangeAmount("");
+            setCurrentHP(prev => Math.min(hitPoints, prev + Number(changeAmountHealth)));
+            setChangeAmountHealth("");
         }
     };
 
     const handleDamage = () => {
-        if (changeAmount)
+        if (changeAmountHealth)
         {
-            setCurrentHP(prev => Math.max(0, prev - Number(changeAmount)));
-            setChangeAmount("");
+            setCurrentHP(prev => Math.max(0, prev - Number(changeAmountHealth)));
+            setChangeAmountHealth("");
+        }
+    };
+
+    const handleRecovery = () => {
+        if (changeAmountSanity)
+        {
+            setCurrentSanity(prev => Math.min(sanity, prev + Number(changeAmountSanity)));
+            setChangeAmountSanity("");
+        }
+    }; 
+
+    const handleStress = () => {
+        if (changeAmountSanity)
+        {
+            setCurrentSanity(prev => Math.max(0, prev - Number(changeAmountSanity)));
+            setChangeAmountSanity("");
         }
     };
 
@@ -137,15 +160,29 @@ function CharacterSkills() {
                         className="healthInput" 
                         type="number"
                         min="0"
-                        value={changeAmount}
-                        onChange={e => setChangeAmount(e.target.value)}/>
+                        value={changeAmountHealth}
+                        onChange={e => setChangeAmountHealth(e.target.value)}/>
                         <button className="damageButton" onClick={handleDamage}>Damage</button>
                         </div>
                     </div>
                 </div>
 
                 <div className="sanityPoints">
-                    Sanity 
+                    <div className="sanityBox">
+                        <p className = "sanityDisplay">
+                            Current Sanity: {currentSanity}|{sanity}
+                        </p>
+                        <div className="recover">
+                        <button className="recoverButton" onClick={handleRecovery}>Recover</button>
+                        <input
+                        className="recoverInput" 
+                        type="number"
+                        min="0"
+                        value={changeAmountSanity}
+                        onChange={e => setChangeAmountSanity(e.target.value)}/>
+                        <button className="stressButton" onClick={handleStress}>Stress</button>
+                        </div>
+                    </div> 
                 </div>
                 
             </div>
