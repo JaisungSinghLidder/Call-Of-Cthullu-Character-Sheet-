@@ -1,18 +1,21 @@
-/* Broad layout */
 .character-skills {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* core vs derived stats */
+    grid-template-columns: 2fr 1fr; 
     gap: 2rem;
 }
 
-/* Details inside core-stats */
 .core-stats {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* space between stat blocks */
+    gap: 1rem; 
 }
 
-/* Details inside derived-stats */
+.hpDisplay
+{
+    text-align: center;
+    font-weight: bold;
+}
+
 .derived-stats {
     display: flex;
     flex-direction: column;
@@ -41,4 +44,40 @@ button {
 
 button:hover {
   background: #444;
+}
+
+.hitPoints
+{
+    background-color: white;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border:2px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.healthInput
+{
+    height: auto; 
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+
+.healButton {
+    color: lightgreen;
+    border: 2px solid lightgreen;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem; 
+    background-color: transparent; 
+    font-family: monospace;
+}
+
+
+.damageButton
+{
+    color: red;
+    border: 2px solid red; 
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem; 
+    background-color: transparent; 
+    font-family: monospace;
 }

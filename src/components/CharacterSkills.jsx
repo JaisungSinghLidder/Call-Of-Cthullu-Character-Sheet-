@@ -127,14 +127,14 @@ function CharacterSkills() {
             <div className="derived-stats">
                 
                 <div className="hitPoints">
-                    Healthpoints
                     <div className="healthBox">
-                         <p>
+                        <p className = "hpDisplay">
                             Current HP: {currentHP}|{hitPoints}
                         </p>
                         <div className="heal">
                         <button className="healButton" onClick={handleHeal}>Heal</button>
-                        <input 
+                        <input
+                        className="healthInput" 
                         type="number"
                         min="0"
                         value={changeAmount}
