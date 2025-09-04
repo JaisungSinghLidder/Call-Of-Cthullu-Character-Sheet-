@@ -1,4 +1,4 @@
-# Call of Cthullu Character Sheet 
+# Call of Cthullu Character Sheet (7th-Edition)
 
 
 Currently taking a break from AI & Computer Vision to create an interactable character sheet for the TTRPG Call of Cthullu
@@ -7,3 +7,4 @@ Currently taking a break from AI & Computer Vision to create an interactable cha
 If some context is required about how to create a character, please use this link:
 
 https://rpgames.be/call-of-cthulhu-character-creation-for-7th-edition/ 
+
