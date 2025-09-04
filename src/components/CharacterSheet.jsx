@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import CharacterInfo from "./CharacterInfo.jsx";
 import CharacterSkills from "./CharacterSkills.jsx";
+import Characteristics from "./Characteristics.jsx";
 
 
 
@@ -12,6 +13,7 @@ function CharacterSheet() {
     <div className="character-sheet">
       <CharacterInfo />
       <CharacterSkills />
+      <Characteristics />
     </div>
   );
 }
