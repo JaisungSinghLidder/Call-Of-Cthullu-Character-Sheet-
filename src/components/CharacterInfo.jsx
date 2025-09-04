@@ -33,6 +33,7 @@ function CharacterInfo() {
           Age:
           <input
             type="number"
+            min="0"
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />

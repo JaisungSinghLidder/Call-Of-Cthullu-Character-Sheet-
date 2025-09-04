@@ -11,6 +11,7 @@ function CharacterSkills() {
     const [power, setPower] = useState("");
     const [size, setSize] = useState("");
     const [education, setEducation] = useState("");
+    const [luck, setLuck] = useState("");
 
 
     const [currentHP, setCurrentHP] = useState(null);
@@ -23,20 +24,34 @@ function CharacterSkills() {
     const [changeAmountMagic, setChangeAmountMagic] = useState("");
 
 
-    //using these to generate the stats 
-    const rollStat = () => Math.floor((Math.random() * 18 + 3) *5);
-    const rollEDU = () => Math.floor((Math.random() * 12 + 2) * 5);
+    //generating rolling stats 
+
+    function rollDie(sides) {
+        return Math.floor(Math.random() * sides) + 1;
+    }
+
+    function roll3d6Times5() {
+        const total = rollDie(6) + rollDie(6) + rollDie(6);
+        return total * 5;
+    }
+    
+    function roll2d6Times5()
+    {
+        const total = rollDie(6) + rollDie(6) + 6;
+        return total * 5;
+    }
 
     //now applying those stats
     const rollAllStats = () => {
-        setStrength(rollStat());
-        setDexterity(rollStat());
-        setConstitution(rollStat());
-        setIntelligence(rollStat());
-        setAppearance(rollStat());
-        setPower(rollStat());
-        setSize(rollStat());
-        setEducation(rollEDU());  
+        setStrength(roll3d6Times5());
+        setDexterity(roll3d6Times5());
+        setConstitution(roll3d6Times5());
+        setIntelligence(roll2d6Times5());
+        setAppearance(roll3d6Times5());
+        setPower(roll3d6Times5());
+        setSize(roll2d6Times5());
+        setEducation(roll2d6Times5());  
+        setLuck(roll3d6Times5)
     };
 
     //here will set the stats if they exist
@@ -168,6 +183,11 @@ function CharacterSkills() {
                 <label>EDU: <input type = "number" value={education} onChange={e => setEducation(e.target.value)} /></label>
                 <p>½: {education ? Math.floor(education / 2) : ""}, ¼: {education ? Math.floor(education / 4) : ""}</p>
                 </div>
+
+                <div className="stat-block">
+                <label>LCK: <input type = "number" value={luck} onChange={e => setLuck(e.target.value)} /></label>
+                <p>½: {luck ? Math.floor(luck / 2) : ""}, ¼: {luck ? Math.floor(luck / 4) : ""}</p>
+                </div>
                 
             </div>
 
@@ -192,10 +212,6 @@ function CharacterSkills() {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div>
-                    World
                 </div>
             </div>
 
