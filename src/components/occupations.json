@@ -2,63 +2,68 @@
     {
         "name": "antiquarian",
         "ocp": "scholarly",
-        "skills":["appraise", "archaeology", "history", "other language", "library use", "spot hidden", "mechanical repair", "navigate" ]
+        "skills":["appraise", "archaeology", "history", "other language", "library use", "spot hidden", "mechanical repair", "navigate" ],
+        "cr":[30,50]
     },
     {
         "name": "author",
         "ocp": "scholarly",
-        "skills":["history", "library use", "occult", "other language", "persuade", "own language", "psychology"]
+        "skills":["history", "library use", "occult", "other language", "persuade", "own language", "psychology"],
+        "cr":[10,60]
     },
     {
         "name": "criminal",
         "ocp": "physical",
-        "skills":["bargin", "disguise", "fast talk", "handgun", "locksmith", "sneak", "spot hidden"]
+        "skills":["bargin", "disguise", "fast talk", "handgun", "locksmith", "sneak", "spot hidden"],
+        "cr":[30,60]
     },
     {
         "name": "dilettante",
         "ocp": "scholarly",
-        "skills":["art", "craft", "credit rating", "other language", "ride", "shotgun"]
+        "skills":["art", "craft", "credit rating", "other language", "ride", "shotgun"],
+        "cr":[40,80]
     },
     {
         "name": "doctor",
         "ocp": "scholarly",
-        "skills":["biology", "credit rating", "first aid", "other language", "medicine", "pharmacy", "psychoanalysis", "psychology"]
+        "skills":["biology", "credit rating", "first aid", "other language", "medicine", "pharmacy", "psychoanalysis", "psychology"],
+        "cr":[30,70]
     },
-    {
-        "name": "explorer",
-        "ocp": "physical",
-        "skills":[]
-    }, 
     {
         "name": "journalist",
         "ocp": "physical",
-        "skills":["fast talk", "history", "library use", "own language", "persuade", "photography", "psychology"]
+        "skills":["fast talk", "history", "library use", "own language", "persuade", "photography", "psychology"],
+        "cr":[10,40]
     },
     {
         "name": "police-detective",
         "ocp": "physical",
-        "skills":["bargin", "fast talk", "law", "listen", "persuade", "psychology", "spot hidden"]
+        "skills":["bargin", "fast talk", "law", "listen", "persuade", "psychology", "spot hidden"],
+        "cr":[20,50]
     }, 
     {
         "name": "private-investigator",
         "ocp": "physical",
-        "skills":["bargin", "fast talk", "law", "library use", "locksmith", "photography","psychology"]
+        "skills":["bargin", "fast talk", "law", "library use", "locksmith", "photography","psychology"],
+        "cr":[10,60]
     },
     {
         "name": "professor",
         "ocp":  "scholarly",
-        "skills":["bargain", "credit rating", "library use", "other language", "persuade", "psychology"]
+        "skills":["bargain", "credit rating", "library use", "other language", "persuade", "psychology"],
+        "cr":[30,40]
     },
     {
         "name": "lawyer",
         "ocp": "physical",
-        "skills":["bargain", "credit rating", "fast talk", "law", "library use", "persuade", "psychology"]
+        "skills":["bargain", "credit rating", "fast talk", "law", "library use", "persuade", "psychology"],
+        "cr":[30,70]
     },
-     Lawyer – Bargain, Credit Rating, Fast Talk, Law, Library Use, Persuade, Psychology, any one other skill as a personal or era specialty. 
     {
         "name": "policeman",
         "ocp": "physical",
-        "skills":["dodge", "fast talk", "first aid", "grapple", "law", "psychology"]
+        "skills":["dodge", "fast talk", "first aid", "grapple", "law", "psychology"],
+        "cr":[10,40]
     }
 ]
 
