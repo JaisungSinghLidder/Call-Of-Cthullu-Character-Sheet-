@@ -1,0 +1,64 @@
+[
+    {
+        "name": "antiquarian",
+        "ocp": "scholarly",
+        "skills":["appraise", "archaeology", "history", "other language", "library use", "spot hidden", "mechanical repair", "navigate" ]
+    },
+    {
+        "name": "author",
+        "ocp": "scholarly",
+        "skills":["history", "library use", "occult", "other language", "persuade", "own language", "psychology"]
+    },
+    {
+        "name": "criminal",
+        "ocp": "physical",
+        "skills":["bargin", "disguise", "fast talk", "handgun", "locksmith", "sneak", "spot hidden"]
+    },
+    {
+        "name": "dilettante",
+        "ocp": "scholarly",
+        "skills":["art", "craft", "credit rating", "other language", "ride", "shotgun"]
+    },
+    {
+        "name": "doctor",
+        "ocp": "scholarly",
+        "skills":["biology", "credit rating", "first aid", "other language", "medicine", "pharmacy", "psychoanalysis", "psychology"]
+    },
+    {
+        "name": "explorer",
+        "ocp": "physical",
+        "skills":[]
+    }, 
+    {
+        "name": "journalist",
+        "ocp": "physical",
+        "skills":["fast talk", "history", "library use", "own language", "persuade", "photography", "psychology"]
+    },
+    {
+        "name": "police-detective",
+        "ocp": "physical",
+        "skills":["bargin", "fast talk", "law", "listen", "persuade", "psychology", "spot hidden"]
+    }, 
+    {
+        "name": "private-investigator",
+        "ocp": "physical",
+        "skills":["bargin", "fast talk", "law", "library use", "locksmith", "photography","psychology"]
+    },
+    {
+        "name": "professor",
+        "ocp":  "scholarly",
+        "skills":["bargain", "credit rating", "library use", "other language", "persuade", "psychology"]
+    },
+    {
+        "name": "lawyer",
+        "ocp": "physical",
+        "skills":["bargain", "credit rating", "fast talk", "law", "library use", "persuade", "psychology"]
+    },
+     Lawyer – Bargain, Credit Rating, Fast Talk, Law, Library Use, Persuade, Psychology, any one other skill as a personal or era specialty. 
+    {
+        "name": "policeman",
+        "ocp": "physical",
+        "skills":["dodge", "fast talk", "first aid", "grapple", "law", "psychology"]
+    }
+]
+
