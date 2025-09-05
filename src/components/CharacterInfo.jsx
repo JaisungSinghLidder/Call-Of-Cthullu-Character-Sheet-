@@ -44,22 +44,20 @@ function CharacterInfo() {
           Occupation:
           <select id="occupation">
             <option value="antiquarian">Antiquarian</option>
-            <option value="archaeologist">Archaeologist</option>
             <option value="author">Author</option>
-            <option value="cat-burglar">Cat Burglar</option>
+            <option value="criminal">Criminal</option>
             <option value="dilettante">Dilettante</option>
-            <option value="doctor">Doctor of Medicine</option>
+            <option value="doctor">Doctor</option>
             <option value="explorer">Explorer</option>
-            <option value="investigative-journalist">Investigative Journalist</option>
             <option value="journalist">Journalist</option>
-            <option value="nurse">Nurse</option>
             <option value="police-detective">Police Detective</option>
             <option value="private-investigator">Private Investigator</option>
             <option value="professor">Professor</option>
-            <option value="soldier">Soldier</option>
-            <option value="custom">Custom</option>
-        </select>
+            <option value="lawyer">Lawyer</option>
+            <option value="policeman">Policeman</option>
+          </select>
         </label>
+
       </div>
 
       {/* Right side: profile picture */}
