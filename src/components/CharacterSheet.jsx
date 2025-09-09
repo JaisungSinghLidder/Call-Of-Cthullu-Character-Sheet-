@@ -3,6 +3,8 @@ import { useState } from "react";
 import CharacterInfo from "./CharacterInfo.jsx";
 import CharacterSkills from "./CharacterSkills.jsx";
 import Characteristics from "./Characteristics.jsx";
+import { CharacterProvider } from "./CharacterContext";
+
 
 
 
@@ -11,9 +13,11 @@ import Characteristics from "./Characteristics.jsx";
 function CharacterSheet() {
   return (
     <div className="character-sheet">
-      <CharacterInfo />
-      <CharacterSkills />
-      <Characteristics />
+      <CharacterProvider>
+        <CharacterInfo />
+        <CharacterSkills />
+        <Characteristics />
+      </CharacterProvider>
     </div>
   );
 }
