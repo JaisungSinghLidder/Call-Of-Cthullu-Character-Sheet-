@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 
 export const CharacterContext = createContext();
 
+
 export function CharacterProvider({ children }) {
   const [coreStats, setCoreStats] = useState({
     strength: 0,
@@ -14,6 +15,9 @@ export function CharacterProvider({ children }) {
     education: 0,
     luck: 0
   });
+
+    const [occupation, setOccupation] = useState("");
+
 
   return (
     <CharacterContext.Provider value={{ coreStats, setCoreStats }}>
