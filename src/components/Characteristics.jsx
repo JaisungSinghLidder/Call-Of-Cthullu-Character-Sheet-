@@ -122,7 +122,7 @@ function Characteristics()
 
     function calculatePersonalPoints()
     {
-
+        return coreStats.intelligence * 2; 
     }
 
     
