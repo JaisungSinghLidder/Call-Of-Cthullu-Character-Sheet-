@@ -11,4 +11,4 @@ https://rpgames.be/call-of-cthulhu-character-creation-for-7th-edition/
 https://roll20.net/compendium/coc/Step%20Four%20(Determine%20Occupation)#content
 
 
-
+My current goal is to try and create a character sheet that makes it easier for people to get into Call of Cthullu and TTRPG in general!

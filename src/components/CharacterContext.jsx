@@ -20,7 +20,7 @@ export function CharacterProvider({ children }) {
 
 
   return (
-    <CharacterContext.Provider value={{ coreStats, setCoreStats }}>
+    <CharacterContext.Provider value={{ coreStats, setCoreStats, occupation, setOccupation }}>
       {children}
     </CharacterContext.Provider>
   );

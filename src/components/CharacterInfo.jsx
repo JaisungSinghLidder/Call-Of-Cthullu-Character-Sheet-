@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import "./CharacterInfo.css";
+import { CharacterContext } from "./CharacterContext"; 
+
 
 function CharacterInfo() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
-  const [occupation, setOccupation] = useState("");
+  const {occupation, setOccupation} = useContext(CharacterContext);
   const [profileImage, setProfileImage] = useState(null);
 
   const handleImageUpload = (event) => {
@@ -42,13 +44,12 @@ function CharacterInfo() {
         </div>
         <label className="bottom-bar">
           Occupation:
-          <select id="occupation">
+          <select value={occupation} onChange={e => setOccupation(e.target.value)}>
             <option value="antiquarian">Antiquarian</option>
             <option value="author">Author</option>
             <option value="criminal">Criminal</option>
             <option value="dilettante">Dilettante</option>
             <option value="doctor">Doctor</option>
-            <option value="explorer">Explorer</option>
             <option value="journalist">Journalist</option>
             <option value="police-detective">Police Detective</option>
             <option value="private-investigator">Private Investigator</option>

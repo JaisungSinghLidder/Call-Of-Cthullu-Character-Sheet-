@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import "./Characteristics.css";
+import { CharacterContext } from "./CharacterContext";
+import occupationData from "./occupations.json"
+
 
 function Characteristics()
 {
 
+    
+    const { coreStats, setCoreStats, occupation, setOccupation } = useContext(CharacterContext);
+
+
+    //base skill levels
+    //the player can improve this
     function Skills() {
         const [skills, setSkills] = useState({
             accounting : 5,
@@ -65,20 +74,79 @@ function Characteristics()
             customEight : 0,
             customNine : 0 
     });
+
+    function calculateEducationPoints()
+    {
+        //Just error checking in cases where the json file has nothing in it.
+        if(!occupationData)
+        {
+            console.log("ERROR! THERE APPEARS TO BE NO INFORMATION ABOUT THE OCCUPATIONS");
+        }
+
+
+
+        if (occupation.toLowerCase() in occupationData)
+        {
+            const occInfo = occupationData.find(
+                (occ) => occ.name.toLowerCase() === occupation.toLowerCase()
+            );
+
+            if (occInfo.ocp == "scholarly")
+            {
+                return coreStats.education * 4 ; 
+            }
+            //this is the case where it is the physical skill point generation
+            else
+            {
+                const values = Object.values(coreStats);
+                
+                const maxCoreStat = Math.max(...values);
+
+                return (coreStats.education * 2) + (maxCoreStat * 2);
+            }
+        }
+        else
+        {
+            console.log("Error, occuaption not found in the data"); 
+        }
+
+        
+        
+
+
+
+
+
+
+    }
+
+    function calculatePersonalPoints()
+    {
+
+    }
+
     
 
     return(
-        <div className="characterisitics">
-            <div className="characteristicsColumn">
-                Hello World
+        <>
+            <div className = "pointBox">
+
             </div>
-            <div className="characteristicsColumn">
-                Hello World
+
+
+            <div className="characterisitics">
+                <div className="characteristicsColumn">
+                    Hello World
+                </div>
+                <div className="characteristicsColumn">
+                    Hello World
+                </div>
+                <div className="characteristicsColumn">
+                    Hello World
+                </div>
             </div>
-            <div className="characteristicsColumn">
-                Hello World
-            </div>
-        </div>
+
+        </>
     );
 }
 
