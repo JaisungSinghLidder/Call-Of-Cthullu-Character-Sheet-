@@ -96,20 +96,20 @@ function Characteristics() {
   }
 
   function Skill({ name, value }) {
-  return (
-    <div className="skill-div">
-      <label>
-        <input type="checkbox" />
-        {name} {value + "%"}
-      </label>
-      <div className="skill-boxes">
-        <input type="number" className="box" value={value} readOnly />
-        <input type="number" className="box" value={Math.floor(value / 2)} readOnly />
-        <input type="number" className="box" value={Math.floor(value / 5)} readOnly />
-      </div>
-    </div>
-  );
-}
+        return (
+            <div className="skill-div">
+            <label>
+                <input type="checkbox" />
+                {name} {value + "%"}
+            </label>
+            <div className="skill-boxes">
+                <input type="number" className="box" value={value} readOnly />
+                <input type="number" className="box" value={Math.floor(value / 2)} readOnly />
+                <input type="number" className="box" value={Math.floor(value / 5)} readOnly />
+            </div>
+            </div>
+        );
+    }
 
 
   return (
@@ -145,8 +145,54 @@ function Characteristics() {
             
         </div>
 
-        <div className="characteristicsColumn">Hello World</div>
-        <div className="characteristicsColumn">Hello World</div>
+        <div className="characteristicsColumn">
+
+            <Skill name="Firearms (Rifle/Shotgun)" value={skills.fireArmsRifle} />
+            <Skill name="CustomFirearms" value={skills.firearmsCustom} /> 
+            <Skill name="First Aid" value={skills.firstAid} />
+            <Skill name="History" value={skills.history} />
+            <Skill name="Intimidate" value={skills.intimidate} />
+            <Skill name="Jump" value={skills.jump} />
+            <Skill name="Language(Other)" value={skills.languageOther} />
+            <Skill name="CustomTwo" value={skills.customTwo} />
+            <Skill name="CustomThree" value={skills.customThree} />
+            <Skill name="Language (Own)" value={skills.languageOwn} />
+            <Skill name="Law" value={skills.law} />
+            <Skill name="Library Use" value={skills.libraryUse} />
+            <Skill name="Listen" value={skills.listen} />
+            <Skill name="Locksmith" value={skills.locksmith} />
+            <Skill name="Mech. Repair" value={skills.mechRepair} />
+            <Skill name="Medicine" value={skills.medicine} />
+            <Skill name="Natural World" value={skills.naturalWorld} />
+            <Skill name="Navigate" value={skills.navigate} />  
+            <Skill name="Occult" value={skills.occult} />
+
+        </div>
+
+        <div className="characteristicsColumn">
+
+            <Skill name="Persuade" value={skills.persuade} />
+            <Skill name="CustomFour" value={skills.customFour} /> 
+            <Skill name="Psychoanalysis" value={skills.psychoanalysis} />
+            <Skill name="Psychology" value={skills.psychology} />
+            <Skill name="Ride" value={skills.ride} />
+            <Skill name="Science" value={skills.scienceCustom} />
+            <Skill name="CustomFour" value={skills.customFour} />
+            <Skill name="CustomFifth" value={skills.customFifth} />
+            <Skill name="Sleight of Hand" value={skills.sleightOfHand} />
+            <Skill name="Spot Hidden" value={skills.spotHidden} />
+            <Skill name="Stealth" value={skills.stealth} />
+            <Skill name="Survival" value={skills.survivalCustom} />
+            <Skill name="Swim" value={skills.swim} />
+            <Skill name="Throw" value={skills.throw} />
+            <Skill name="Track" value={skills.track} />
+            <Skill name="CustomSix" value={skills.customSix} />
+            <Skill name="CustomSeven" value={skills.customSeven} />
+            <Skill name="CustomEight" value={skills.customEight} />  
+            <Skill name="CustomNine" value={skills.customNine} />
+
+        </div>
+
       </div>
     </>
   );
