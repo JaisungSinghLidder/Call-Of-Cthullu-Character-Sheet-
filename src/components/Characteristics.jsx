@@ -7,8 +7,7 @@ function Characteristics() {
   const { coreStats, setCoreStats, occupation, setOccupation } =
     useContext(CharacterContext);
 
-  // You don’t need Skills nested inside here unless you *intend*
-  // to render <Skills /> separately
+
   const [skills, setSkills] = useState({
     accounting: 5,
     anthropology: 1,
@@ -96,241 +95,53 @@ function Characteristics() {
     return coreStats.intelligence * 2;
   }
 
+  function Skill({ name, value }) {
+  return (
+    <div className="skill-div">
+      <label>
+        <input type="checkbox" />
+        {name} {value + "%"}
+      </label>
+      <div className="skill-boxes">
+        <input type="number" className="box" value={value} readOnly />
+        <input type="number" className="box" value={Math.floor(value / 2)} readOnly />
+        <input type="number" className="box" value={Math.floor(value / 5)} readOnly />
+      </div>
+    </div>
+  );
+}
+
+
   return (
     <>
-      <div className="pointBox"></div>
+      <div className="pointBox">
+
+
+      </div>
 
       <div className="characteristics">
+
         <div className="characteristicsColumn">
 
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-            
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-
-            <div className="skill-div">
-                <label>
-                <input type="checkbox" /> 
-                Accounting {skills.accounting + "%"}
-                </label>
-                <div class="skill-boxes">
-                    <input type="number" class="box" placeholder="Reg" />
-                    <input type="number" class="box" placeholder="Half" readonly />
-                    <input type="number" class="box" placeholder="Fifth" readonly />
-                </div>
-            </div>
-            
+            <Skill name="Accounting" value={skills.accounting} />
+            <Skill name="Anthropology" value={skills.anthropology} /> 
+            <Skill name="Appraise" value={skills.appraise} />
+            <Skill name="Archaeology" value={skills.archaeology} />
+            <Skill name="CustomArt" value={skills.customArt} />
+            <Skill name="CustomOne" value={skills.customOne} />
+            <Skill name="Charm" value={skills.charm} />
+            <Skill name="Climb" value={skills.climb} />
+            <Skill name="Credit Rating" value={skills.creditRating} />
+            <Skill name="Cthulhu Mythos" value={skills.cthulluMythos} />
+            <Skill name="Disguise" value={skills.disguise} />
+            <Skill name="Dodge" value={skills.dodge} />
+            <Skill name="Drive Auto" value={skills.driveAuto} />
+            <Skill name="Elec. Repair" value={skills.elecRepair} />
+            <Skill name="Fast Talk" value={skills.fastTalk} />
+            <Skill name="Fighting(Brawl)" value={skills.fightingBrawl} />
+            <Skill name="CustomeFightingOne" value={skills.fightingCustomOne} />
+            <Skill name="CustomFightingTwo" value={skills.fightingCustomTwo} />  
+            <Skill name="Firearms(Handgun)" value={skills.firearmsHandgun} />
             
         </div>
 

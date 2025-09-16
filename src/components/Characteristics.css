@@ -4,3 +4,29 @@
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 4rem;
 }
+
+.skill-boxes
+{
+    display:inline;
+    margin-left: 1rem;
+}
+
+.skill-div
+{
+    display:block;
+}
+
+.skill-boxes {
+  display: flex;
+  gap: 5px;
+}
+
+.skill-boxes .box {
+  width: 60px;   
+  text-align: center;
+}
+
+.characteristics
+{
+    margin-top: 2rem;
+}
