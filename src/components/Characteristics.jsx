@@ -102,10 +102,236 @@ function Characteristics() {
 
       <div className="characteristics">
         <div className="characteristicsColumn">
-          <label>
-            <input type="checkbox" /> 
-            Hello World
-          </label>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+            
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+
+            <div className="skill-div">
+                <label>
+                <input type="checkbox" /> 
+                Accounting {skills.accounting + "%"}
+                </label>
+                <div class="skill-boxes">
+                    <input type="number" class="box" placeholder="Reg" />
+                    <input type="number" class="box" placeholder="Half" readonly />
+                    <input type="number" class="box" placeholder="Fifth" readonly />
+                </div>
+            </div>
+            
+            
         </div>
 
         <div className="characteristicsColumn">Hello World</div>
