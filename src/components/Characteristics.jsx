@@ -103,7 +103,7 @@ function Characteristics() {
   }
 
   function calculatePersonalPoints() {
-    return coreStats.intelligence * 2;
+    setPersonalPoints ( coreStats.intelligence * 2 );
   }
 
   function handleOccupationCheck(skillName)
@@ -124,6 +124,12 @@ function Characteristics() {
       }
     })
   }
+
+  React.useEffect(() => {
+    calculateEducationPoints(); 
+    calculatePersonalPoints();  
+  }, [coreStats, occupation]);
+
 
   //reusable function to make the creation more modular and cleaner
   function Skill({ name, value, checked, onChange }) {
@@ -149,7 +155,14 @@ function Characteristics() {
   return (
     <>
       <div className="pointBox">
+        {/*Debugging currently*/}
+        <div className="OccupationalPoints">
+          <p>{occupationalPoints}</p>
+        </div>
 
+        <div className="PersonalPoints">
+          <p>{personalPoints}</p>
+        </div>
 
       </div>
 
