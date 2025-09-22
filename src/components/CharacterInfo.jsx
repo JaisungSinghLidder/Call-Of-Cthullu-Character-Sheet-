@@ -4,6 +4,9 @@ import "./CharacterInfo.css";
 import { CharacterContext } from "./CharacterContext"; 
 
 
+
+//This is going to be where each of the character information is going to inputted by the player 
+
 function CharacterInfo() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
