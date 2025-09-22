@@ -73,6 +73,8 @@ function Characteristics() {
 
   //In Call of Cthullu, you are only allowed a max of 8 occupational skills, so we check here
   const [checkedOccupationalSkillsChecked, setOccupationalSkillsChecked] = useState([]);
+  const [occupationalPoints, setOccupationalPoints] = useState(0);
+  const [personalPoints, setPersonalPoints] = useState(0);
 
   const MAX_CHECKS = 8; 
 
@@ -92,11 +94,11 @@ function Characteristics() {
     }
 
     if (occInfo.ocp === "scholarly") {
-      return coreStats.education * 4;
+      setOccupationalPoints(coreStats.education * 4);
     } else {
       const values = Object.values(coreStats);
       const maxCoreStat = Math.max(...values);
-      return coreStats.education * 2 + maxCoreStat * 2;
+      setOccupationalPoints(coreStats.education * 2 + maxCoreStat * 2);
     }
   }
 
