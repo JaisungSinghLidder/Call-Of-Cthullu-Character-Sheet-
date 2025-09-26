@@ -143,7 +143,7 @@ function Characteristics() {
                 {name} {value + "%"}
             </label>
             <div className="skill-boxes">
-                <input type="number" className="box" value={value} readOnly />
+                <input type="number" className="box" value={value} onChange={(e) => onAllocate(name, parseInt(e.target.value, 10) || 0)}/>
                 <input type="number" className="box" value={Math.floor(value / 2)} readOnly />
                 <input type="number" className="box" value={Math.floor(value / 5)} readOnly />
             </div>
@@ -151,16 +151,29 @@ function Characteristics() {
         );
     }
 
+  //function to allow for the skill boxes to change
+  function handleAllocate(skillName, newValue)
+  {
+    setSkills(prev => (
+      {
+        ...prev, 
+        [skillName.toLowerCase()]: newValue
+      }
+    ));
+  }
+
 
   return (
     <>
       <div className="pointBox">
         {/*Debugging currently*/}
-        <div className="OccupationalPoints">
+        <div className="occupationalPoints">
+          <p>OP</p>
           <p>{occupationalPoints}</p>
         </div>
 
-        <div className="PersonalPoints">
+        <div className="personalPoints">
+          <p>PP</p>
           <p>{personalPoints}</p>
         </div>
 
@@ -225,7 +238,7 @@ function Characteristics() {
             <Skill name="Ride" value={skills.ride} checked={checkedOccupationalSkillsChecked.includes("Ride") } onChange = {handleOccupationCheck} />
             <Skill name="Science" value={skills.scienceCustom} checked={checkedOccupationalSkillsChecked.includes("Science") } onChange = {handleOccupationCheck} />
             <Skill name="CustomFour" value={skills.customFour} checked={checkedOccupationalSkillsChecked.includes("CustomFour") } onChange = {handleOccupationCheck} />
-            <Skill name="CustomFifth" value={skills.customFifth} checked={checkedOccupationalSkillsChecked.includes("CustomFifth") } onChange = {handleOccupationCheck}/>
+            <Skill name="CustomFive" value={skills.customFifth} checked={checkedOccupationalSkillsChecked.includes("CustomFive") } onChange = {handleOccupationCheck}/>
             <Skill name="Sleight of Hand" value={skills.sleightOfHand} checked={checkedOccupationalSkillsChecked.includes("Sleight of Hand") } onChange = {handleOccupationCheck} />
             <Skill name="Spot Hidden" value={skills.spotHidden} checked={checkedOccupationalSkillsChecked.includes("Spot Hidden") } onChange = {handleOccupationCheck} />
             <Skill name="Stealth" value={skills.stealth} checked={checkedOccupationalSkillsChecked.includes("Stealth") } onChange = {handleOccupationCheck} />
