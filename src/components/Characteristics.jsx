@@ -154,14 +154,56 @@ function Characteristics() {
   //function to allow for the skill boxes to change
   function handleAllocate(skillName, newValue)
   {
-    setSkills(prev => (
-      {
-        ...prev, 
-        [skillName.toLowerCase()]: newValue
-      }
-    ));
-  }
+    
+    //we need to convert the former string into now a number 
+    const newValueConverted = Number(newValue);
 
+
+    if (Number.isNaN(newValueConverted))
+    {
+      alert("Please enter in numbers, not letters");
+      return; 
+    }
+    
+    
+
+
+    setSkills(prev => {
+      //Just getting the old value and if it can't find it then it will use 0 as a placeholder value 
+      const oldValue = prev[skillName] || 0; 
+      const diff = newValueConverted - oldValue;
+
+      /*here we are checking where you can only change the value of checked skills
+        for context: in Call of Cthullu, these occupational skills are meant only for skills that relate to your job.
+        so you can only allocate points that are checked, as checked means those skills are related to your job
+      */
+      if (checkedOccupationalSkillsChecked.includes(skillName))
+      {
+
+
+        if (diff > 0 && diff > occupationalPoints)
+        {
+          alert("You don't have enough occupational points");
+          return prev; 
+        }
+        else
+        {
+          setOccupationalPoints(prev => prev - diff);
+        }
+
+
+      }
+      //Just return prev, I could give a warning but if the user accidentally clicks and tries to increase a value and constantly get paused by a warning
+      //It may start to frustrate the user. 
+      else
+      {
+        return prev; 
+      }
+      
+      return { ...prev, [skillName]: newValue };
+
+    });
+  }
 
   return (
     <>
