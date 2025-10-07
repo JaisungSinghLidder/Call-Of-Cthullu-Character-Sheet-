@@ -71,6 +71,29 @@ function Characteristics() {
     customNine: 0,
   });
 
+  /*
+  const [customskills, setCustomSkills] = useState({
+    customArt: 5,
+    customOne: 0,
+    fightingCustomOne: 0,
+    fightingCustomTwo: 0,
+    firearmsCustom: 0,
+    customTwo: 0,
+    customThree: 0,
+    pilotCustom: 1,
+    scienceCustom: 1,
+    customFour: 0,
+    customFive: 0,
+    survivalCustom: 10,
+    customSix: 0,
+    customSeven: 0,
+    customEight: 0,
+    customNine: 0,
+  });*/
+
+
+
+
   //base values here 
   const baseValues = {
     accounting: 5,
@@ -212,6 +235,26 @@ function Characteristics() {
         );
     }
 
+
+    function CustomSkill({ keyName, label, value, checked, onChange, onAllocate }) {
+        return (
+            <div className="skill-div">
+            <label>
+                <input type="checkbox"
+                 checked={checked} 
+                 onChange={() => onChange(keyName)}
+                />
+                <input type = "text" placeholder= {keyName} /> {value + "%"}
+            </label>
+            <div className="skill-boxes">
+                <input type="number" className="box" value={value} onChange={(e) => onAllocate(keyName, parseInt(e.target.value, 10) || 0)}/>
+                <input type="number" className="box" value={Math.floor(value / 2)} readOnly />
+                <input type="number" className="box" value={Math.floor(value / 5)} readOnly />
+            </div>
+            </div>
+        );
+    }
+
   //NEW VERSION 
   function handleAllocate(skillName, newValue)
   {
@@ -298,8 +341,8 @@ function Characteristics() {
             <Skill keyName = "anthropology" label="Anthropology" value={skills.anthropology} checked={checkedOccupationalSkillsChecked.includes("anthropology") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} /> 
             <Skill keyName = "appraise" label="Appraise" value={skills.appraise} checked={checkedOccupationalSkillsChecked.includes("appraise") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "archaeology" label="Archaeology" value={skills.archaeology} checked={checkedOccupationalSkillsChecked.includes("archaeology") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "customArt" label="CustomArt" value={skills.customArt} checked={checkedOccupationalSkillsChecked.includes("customArt") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "customOne" label="CustomOne" value={skills.customOne} checked={checkedOccupationalSkillsChecked.includes("customOne") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "customArt" label="CustomArt" value={skills.customArt} checked={checkedOccupationalSkillsChecked.includes("customArt") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "customOne" label="CustomOne" value={skills.customOne} checked={checkedOccupationalSkillsChecked.includes("customOne") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "charm" label="Charm" value={skills.charm} checked={checkedOccupationalSkillsChecked.includes("charm") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "climb" label="Climb" value={skills.climb} checked={checkedOccupationalSkillsChecked.includes("climb") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "creditRating" label="Credit Rating" value={skills.creditRating} checked={checkedOccupationalSkillsChecked.includes("creditRating") } onChange = {handleOccupationCheck} onAllocate={handleAllocate}/>
@@ -310,8 +353,8 @@ function Characteristics() {
             <Skill keyName = "elecRepair" label="Elec. Repair" value={skills.elecRepair} checked={checkedOccupationalSkillsChecked.includes("elecRepair") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "fastTalk" label="Fast Talk" value={skills.fastTalk} checked={checkedOccupationalSkillsChecked.includes("fastTalk") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "fightingBrawl" label="Fighting(Brawl)" value={skills.fightingBrawl} checked={checkedOccupationalSkillsChecked.includes("fightingBrawl") } onChange = {handleOccupationCheck} onAllocate={handleAllocate}/>
-            <Skill keyName = "fightingCustomOne" label="CustomeFightingOne" value={skills.fightingCustomOne} checked={checkedOccupationalSkillsChecked.includes("fightingCustomOne") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "fightingCustomTwo" label="CustomFightingTwo" value={skills.fightingCustomTwo} checked={checkedOccupationalSkillsChecked.includes("fightingCustomTwo") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />  
+            <CustomSkill keyName = "fightingCustomOne" label="CustomeFightingOne" value={skills.fightingCustomOne} checked={checkedOccupationalSkillsChecked.includes("fightingCustomOne") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "fightingCustomTwo" label="CustomFightingTwo" value={skills.fightingCustomTwo} checked={checkedOccupationalSkillsChecked.includes("fightingCustomTwo") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />  
             <Skill keyName = "firearmsHandgun" label="Firearms(Handgun)" value={skills.firearmsHandgun} checked={checkedOccupationalSkillsChecked.includes("firearmsHandgun") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             
         </div>
@@ -319,14 +362,14 @@ function Characteristics() {
         <div className="characteristicsColumn">
 
             <Skill keyName = "fireArmsRifle" label="Firearms (Rifle/Shotgun)" value={skills.fireArmsRifle} checked={checkedOccupationalSkillsChecked.includes("fireArmsRifle") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "firearmsCustom" label="CustomFirearms" value={skills.firearmsCustom} checked={checkedOccupationalSkillsChecked.includes("firearmsCustom") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} /> 
+            <CustomSkill keyName = "firearmsCustom" label="CustomFirearms" value={skills.firearmsCustom} checked={checkedOccupationalSkillsChecked.includes("firearmsCustom") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} /> 
             <Skill keyName = "firstAid" label="First Aid" value={skills.firstAid} checked={checkedOccupationalSkillsChecked.includes("firstAid") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "history" label="History" value={skills.history} checked={checkedOccupationalSkillsChecked.includes("history") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "intimidate" label="Intimidate" value={skills.intimidate} checked={checkedOccupationalSkillsChecked.includes("intimidate") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "jump" label="Jump" value={skills.jump} checked={checkedOccupationalSkillsChecked.includes("jump") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "languageOther" label="Language(Other)" value={skills.languageOther} checked={checkedOccupationalSkillsChecked.includes("languageOther") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "customTwo" label="CustomTwo" value={skills.customTwo} checked={checkedOccupationalSkillsChecked.includes("customTwo") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "customThree" label="CustomThree" value={skills.customThree} checked={checkedOccupationalSkillsChecked.includes("CustomThree") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "customTwo" label="CustomTwo" value={skills.customTwo} checked={checkedOccupationalSkillsChecked.includes("customTwo") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "customThree" label="CustomThree" value={skills.customThree} checked={checkedOccupationalSkillsChecked.includes("CustomThree") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "languageOwn" label="Language (Own)" value={skills.languageOwn} checked={checkedOccupationalSkillsChecked.includes("languageOwn") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "law" label="Law" value={skills.law} checked={checkedOccupationalSkillsChecked.includes("law") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "libraryUse" label="Library Use" value={skills.libraryUse} checked={checkedOccupationalSkillsChecked.includes("libraryUse") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
@@ -343,13 +386,13 @@ function Characteristics() {
         <div className="characteristicsColumn">
 
             <Skill keyName = "persuade" label="Persuade" value={skills.persuade} checked={checkedOccupationalSkillsChecked.includes("persuade") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "pilotCustom" label="Pilot (Custom)" value={skills.customFour} checked={checkedOccupationalSkillsChecked.includes("pilotCustom") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} /> 
+            <CustomSkill keyName = "pilotCustom" label="Pilot (Custom)" value={skills.customFour} checked={checkedOccupationalSkillsChecked.includes("pilotCustom") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} /> 
             <Skill keyName = "psychoanalysis" label="Psychoanalysis" value={skills.psychoanalysis} checked={checkedOccupationalSkillsChecked.includes("psychoanalysis") } onChange = {handleOccupationCheck} onAllocate={handleAllocate}/>
             <Skill keyName = "psychology" label="Psychology" value={skills.psychology} checked={checkedOccupationalSkillsChecked.includes("psychology") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "ride" label="Ride" value={skills.ride} checked={checkedOccupationalSkillsChecked.includes("ride") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "scienceCustom" label="Science" value={skills.scienceCustom} checked={checkedOccupationalSkillsChecked.includes("scienceCustom") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "customFour" label="CustomFour" value={skills.customFour} checked={checkedOccupationalSkillsChecked.includes("customFour") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "customFive" label="CustomFive" value={skills.customFifth} checked={checkedOccupationalSkillsChecked.includes("CustomFive") } onChange = {handleOccupationCheck} onAllocate={handleAllocate}/>
+            <CustomSkill keyName = "scienceCustom" label="Science" value={skills.scienceCustom} checked={checkedOccupationalSkillsChecked.includes("scienceCustom") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "customFour" label="CustomFour" value={skills.customFour} checked={checkedOccupationalSkillsChecked.includes("customFour") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "customFive" label="CustomFive" value={skills.customFive} checked={checkedOccupationalSkillsChecked.includes("CustomFive") } onChange = {handleOccupationCheck} onAllocate={handleAllocate}/>
             <Skill keyName = "sleightOfHand" label="Sleight of Hand" value={skills.sleightOfHand} checked={checkedOccupationalSkillsChecked.includes("sleightOfHand") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "spotHidden" label="Spot Hidden" value={skills.spotHidden} checked={checkedOccupationalSkillsChecked.includes("spotHidden") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "stealth" label="Stealth" value={skills.stealth} checked={checkedOccupationalSkillsChecked.includes("stealth") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
@@ -357,10 +400,10 @@ function Characteristics() {
             <Skill keyName = "swim" label="Swim" value={skills.swim} checked={checkedOccupationalSkillsChecked.includes("swim") } onChange = {handleOccupationCheck} onAllocate={handleAllocate}/>
             <Skill keyName = "throw" label="Throw" value={skills.throw} checked={checkedOccupationalSkillsChecked.includes("throw") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
             <Skill keyName = "track" label="Track" value={skills.track} checked={checkedOccupationalSkillsChecked.includes("track") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "customSix" label="CustomSix" value={skills.customSix} checked={checkedOccupationalSkillsChecked.includes("CustomSix") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "customSeven" label="CustomSeven" value={skills.customSeven} checked={checkedOccupationalSkillsChecked.includes("CustomSeven") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
-            <Skill keyName = "customEight" label="CustomEight" value={skills.customEight} checked={checkedOccupationalSkillsChecked.includes("CustomEight") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />  
-            <Skill keyName = "customNine" label="CustomNine" value={skills.customNine} checked={checkedOccupationalSkillsChecked.includes("CustomNine") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "customSix" label="CustomSix" value={skills.customSix} checked={checkedOccupationalSkillsChecked.includes("CustomSix") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "customSeven" label="CustomSeven" value={skills.customSeven} checked={checkedOccupationalSkillsChecked.includes("CustomSeven") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
+            <CustomSkill keyName = "customEight" label="CustomEight" value={skills.customEight} checked={checkedOccupationalSkillsChecked.includes("CustomEight") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />  
+            <CustomSkill keyName = "customNine" label="CustomNine" value={skills.customNine} checked={checkedOccupationalSkillsChecked.includes("CustomNine") } onChange = {handleOccupationCheck} onAllocate={handleAllocate} />
 
         </div>
 
