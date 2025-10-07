@@ -92,6 +92,26 @@ function Characteristics() {
   });*/
 
 
+  const [customLabels, setCustomLabels] = useState({
+    customArt: "",
+    customOne: "",
+    fightingCustomOne: "",
+    fightingCustomTwo: "",
+    firearmsCustom: "",
+    customTwo: "",
+    customThree: "",
+    pilotCustom: "",
+    scienceCustom: "",
+    customFour: "",
+    customFive: "",
+    survivalCustom: "",
+    customSix: "",
+    customSeven: "",
+    customEight: "",
+    customNine: "",
+});
+
+
 
 
   //base values here 
@@ -244,7 +264,7 @@ function Characteristics() {
                  checked={checked} 
                  onChange={() => onChange(keyName)}
                 />
-                <input type = "text" placeholder= {keyName} /> {value + "%"}
+                <input type="text" placeholder={keyName} value={customLabels[keyName] || ""} onChange={(e) => setCustomLabels(prev => ({ ...prev, [keyName]: e.target.value }))} /> {value + "%"}
             </label>
             <div className="skill-boxes">
                 <input type="number" className="box" value={value} onChange={(e) => onAllocate(keyName, parseInt(e.target.value, 10) || 0)}/>
